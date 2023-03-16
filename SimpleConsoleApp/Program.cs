@@ -16,7 +16,8 @@ namespace SimpleConsoleApp
             var configuration = builder.Build();
 
             var connectionString = configuration.GetConnectionString("StorageAccount");
-
+            
+            // Get blog container
             string containerName = "textfiles";
             BlobContainerClient container = new BlobContainerClient(connectionString, containerName);
             container.CreateIfNotExists();
